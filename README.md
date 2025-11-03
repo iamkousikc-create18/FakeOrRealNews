@@ -31,7 +31,7 @@ ML Algorithm	Logistic Regression
 Evaluation Metrics	accuracy_score, classification_report
 Model Saving	Joblib (vectorizer.jb, logistic.jb)
 Deployment	Streamlit (fake.py)
-Dataset	fake.csv, true.csv
+Dataset	Fake.csv, True.csv
 
 
 
@@ -41,8 +41,8 @@ Dataset	fake.csv, true.csv
 
 File Name	Description
 
-fake.csv	Contains fake news articles
-true.csv	Contains real news articles
+Fake.csv	Contains fake news articles
+True.csv	Contains real news articles
 
 
 Both datasets are merged and preprocessed before model training.
@@ -159,5 +159,10 @@ Add visual analytics dashboard
 
 ---
 
-👨‍💻 Author
 
+✍ Author
+
+👤 Kousik Chakraborty
+📧 Email: www.kousik.c.in@gmail.com
+🔗 GitHub Profile: https://github.com/iamkousikc-create18
+🔗 Project Repository: https://github.com/iamkousikc-create18/FakeOrRealNews
