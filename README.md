@@ -1,136 +1,104 @@
-📰 Fake News Detection | NLP & Machine Learning
+📰 Fake News Detection using Logistic Regression
 
-A complete Fake News Classification Project that identifies whether a news article is Real or Fake using Natural Language Processing (NLP) techniques and a Logistic Regression model. The model is deployed with a Streamlit web app (fake.py) for real-time predictions.
+📘 Overview
 
+This project detects Fake News using Machine Learning (Logistic Regression). It applies Natural Language Processing (NLP) to clean and analyze news text, and predicts whether a given news article is Real or Fake.
 
----
-
-📌 Project Overview
-
-This project focuses on detecting fake news by analyzing the text content of news articles using machine learning and NLP.
-It includes:
-✔ Fake & Real news datasets (fake.csv, true.csv)
-✔ Text preprocessing using NLTK (stopwords, PorterStemmer)
-✔ TF-IDF Vectorization for text to numeric conversion
-✔ Model training using Logistic Regression
-✔ Evaluation using accuracy_score & classification_report
-✔ Saved trained model & vectorizer using Joblib
-✔ Streamlit-based web application (fake.py) for deployment
+The trained model is deployed using Streamlit, providing a simple web interface for real-time testing.
 
 
 ---
 
-🛠 Tech Stack
+🚀 Features
 
-Component	Technology Used
+Clean text using regular expressions and NLP preprocessing
 
-Language	Python
-NLP Tools	NLTK (stopwords, PorterStemmer)
-Feature Extraction	TfidfVectorizer
-ML Algorithm	Logistic Regression
-Evaluation Metrics	accuracy_score, classification_report
-Model Saving	Joblib (vectorizer.jb, logistic.jb)
-Deployment	Streamlit (fake.py)
-Dataset	Fake.csv, True.csv
+Train model using Logistic Regression
+
+Achieved 98% accuracy on the dataset
+
+Deployable Streamlit web app for interactive fake news detection
 
 
 
 ---
 
-📂 Dataset Description
+🧠 Technologies Used
 
-File Name	Description
+Python
 
-Fake.csv	Contains fake news articles
-True.csv	Contains real news articles
+pandas, numpy, scikit-learn
 
+nltk, re
 
-Both datasets are merged and preprocessed before model training.
+joblib (for saving/loading models)
 
+Streamlit (for deployment)
 
----
-
-⚙ End-to-End Workflow
-
-✅ 1. Data Loading
-
-import pandas as pd
-fake = pd.read_csv("fake.csv")
-true = pd.read_csv("true.csv")
-
-✅ 2. Text Preprocessing (NLTK)
-
-Convert to lowercase
-
-Remove punctuation & symbols
-
-Remove stopwords
-
-Apply PorterStemmer
-
-
-from nltk.corpus import stopwords
-from nltk.stem.porter import PorterStemmer
-
-✅ 3. Feature Extraction
-
-TF-IDF converts textual data to numerical format:
-
-from sklearn.feature_extraction.text import TfidfVectorizer
-vectorizer = TfidfVectorizer()
-
-Saved as: vectorizer.jb
-
-✅ 4. Model Training
-
-from sklearn.linear_model import LogisticRegression
-model = LogisticRegression()
-model.fit(X_train, y_train)
-
-Saved as: logistic.jb
-
-✅ 5. Model Evaluation
-
-from sklearn.metrics import accuracy_score, classification_report
-print(accuracy_score(y_test, y_pred))
-print(classification_report(y_test, y_pred))
 
 
 ---
 
-💾 Model Saving
+⚙ How It Works
 
-import joblib
-joblib.dump(vectorizer, "vectorizer.jb")
-joblib.dump(model, "logistic.jb")
+1. Text Cleaning: Removes punctuation, URLs, and unwanted symbols.
+
+
+2. Vectorization: Converts text into numerical features using TfidfVectorizer.
+
+
+3. Model Training: Logistic Regression classifier is trained on the processed data.
+
+
+4. Prediction: The trained model predicts whether a given news article is Real or Fake.
+
+
+5. Deployment: Streamlit app lets users input news text and see instant results.
+
+
 
 
 ---
 
-🚀 Streamlit App (Deployment)
+🖥 Streamlit App Usage
 
-Run the web app using:
+Run the following command to start the app:
 
 streamlit run fake.py
 
-Streamlit Features:
-
-✔ Input news text
-✔ Loads vectorizer.jb & logistic.jb
-✔ Predicts: ✅ Real or ❌ Fake
-✔ Simple and interactive UI
+Then enter any news article text into the input box — the app will tell you if it’s Real ✅ or Fake ❌.
 
 
 ---
 
-📊 Results
+📁 Project Structure
 
-Metric	Score
+├── NewsFakeOrReal.ipynb           # Model training and preprocessing notebook
+├── fake.py              # Streamlit web app for deployment
+├── logistic.jb          # Trained Logistic Regression model
+├── vectorizer.jb        # TF-IDF vectorizer
+├── requirements.txt     # Project dependencies
+├── readme.md            # Documentation
+└── True.csv             # True News dataset
+└── Fake.csv             # Fake News dataset
 
-Accuracy	98% 
-Precision: 99% 	
-Recall: 99%
+---
 
+📊 Model Performance
+
+Algorithm: Logistic Regression
+
+Accuracy: 98%
+
+Evaluation: Tested on unseen data for validation
+
+
+
+---
+
+🔚 Conclusion
+
+This project successfully demonstrates how Machine Learning and NLP can be combined to build a powerful Fake News Detection System. The Streamlit web app makes it easy for users to verify the authenticity of news in real-time.
 
 ---
 
